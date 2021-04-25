@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign in/up ui</title>
+        <link rel="stylesheet" href="signin-signup-ui.css">
+    </head>
+
+    <body>
+        <div class="flip-card-3D-wrapper">
+            <div id="flip-card">
+                <div class="flip-card-front">
+                    <form action="account-login.php" method="post">
+                        <div class="header">
+                            <h2>log in</h2>
+                        </div>
+                        <div>
+                            <input placeholder="email" type="email" name="emaillogin" id="emaillogin">
+                        </div>
+                        <div>
+                            <input placeholder="password" type="password" name="passwordlogin" id="passwordlogin">
+                        </div>
+                        <div>
+                            <input type="submit" value="Sign in">
+                        </div>
+                        <h3>new ?
+                            <a id="flip-card-btn-turn-to-back" class="button"> sign up</a>
+                        </h3>
+                    </form>
+                </div>
+                <div class="flip-card-back">
+                    <form action="account-signup.php" method="post">
+                        <div class="header">
+                            <h2>sign up</h2>
+                        </div>
+                        <div>
+                            <input placeholder="email" type="email" name="emailsignup" id="emailsignup">
+                        </div>
+                        <div>
+                            <input placeholder="password" type="password" name="passwordsignup" id="passwordsignup">
+                        </div>
+                        <div>
+                            <input type="submit" value="Sign up">
+                        </div>
+                        <h3>have an account ?
+                            <a id="flip-card-btn-turn-to-front" class="button">sign in</a>
+                        </h3>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+
+                document.getElementById('flip-card-btn-turn-to-back')
+                    .style.visibility = 'visible';
+                document.getElementById('flip-card-btn-turn-to-front')
+                    .style.visibility = 'visible';
+
+                document.getElementById('flip-card-btn-turn-to-back')
+                    .onclick = function () {
+                        document.getElementById('flip-card')
+                            .classList.toggle('do-flip');
+                    };
+
+                document.getElementById('flip-card-btn-turn-to-front')
+                    .onclick = function () {
+                        document.getElementById('flip-card').classList.toggle('do-flip');
+                    };
+
+            });
+
+        </script>
+    </body>
+
+</html>
